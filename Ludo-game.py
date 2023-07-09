@@ -1,3 +1,4 @@
+import xvfbwrapper
 from tkinter import *  # Tkinter is used as the GUI.
 from tkinter import messagebox
 import sys
@@ -5,6 +6,9 @@ import os
 import random
 import tkinter.messagebox
 
+# Set up Xvfb
+xvfb = xvfbwrapper.Xvfb()
+xvfb.start()
 root = Tk()
 
 root.resizable(width=False, height=False)  # The window size of the game.
@@ -845,3 +849,4 @@ button = Button(root, text="   ROLL   ", relief="raised", font=("Arial", 20),
 button.place(x=805, y=120)
 
 root.mainloop()
+xvfb.stop()

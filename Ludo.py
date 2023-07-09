@@ -1,5 +1,10 @@
+import xvfbwrapper
 from tkinter import *                                                                         #Tkinter is used as the GUI.
 import random
+
+# Set up Xvfb
+xvfb = xvfbwrapper.Xvfb()
+xvfb.start()
 root= Tk()
 
 #root.geometry('1000x1000')
@@ -145,3 +150,4 @@ root = Tk()
 root.title("Die Roller")
 myapp = RollTheDice(root)
 root.mainloop()
+xvfb.stop()
